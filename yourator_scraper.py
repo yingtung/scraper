@@ -1,15 +1,10 @@
 
 # coding: utf-8
-
-# In[111]:
-
-
 import json
 import requests
 import datetime
 
 
-# In[112]:
 
 
 #整理skill_tags，只保留技能名字 
@@ -18,8 +13,6 @@ def orgnize_skilltags(tmp_list):
         tmp_list[i]['skill_tags'] = [x['name'] for x in tmp_list[i]['skill_tags']]
     return tmp_list                                                               
 
-
-# In[129]:
 
 
 i = 1
@@ -58,9 +51,6 @@ except IOError:
                  
 
 
-# In[132]:
-
-
 #透過api skill_tags 取得各個技能職缺數
 skill_url = 'https://www.yourator.co/api/v2/job_skill_tags'
 resp = requests.get(skill_url,headers).json()
@@ -70,9 +60,4 @@ try:
 except IOError:
     print("IOError")
 
-
-# In[133]:
-
-
-get_ipython().magic('pinfo json')
 
